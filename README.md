@@ -1,2 +1,0 @@
-# ManifestoQR
-Manifesto QR
