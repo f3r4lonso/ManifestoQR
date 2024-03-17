@@ -9,13 +9,16 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #fff; /* Color de fondo blanco */
     }
     .container {
-      max-width: 800px;
+      max-width: 400px;
       margin: 20px auto;
       padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1px solid #000; /* Borde negro */
+      border-radius: 10px; /* Bordes redondeados */
+      background-color: #000; /* Color de fondo negro */
+      color: #fff; /* Color del texto blanco */
     }
     .product-img {
       max-width: 100%;
@@ -24,9 +27,14 @@
     .product-info {
       margin-top: 20px;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 400px) {
       .container {
-        padding: 10px;
+        width: 100%;
+        border-radius: 0; /* Bordes redondeados */
+        border-top-left-radius: 10px; /* Bordes redondeados */
+        border-top-right-radius: 10px; /* Bordes redondeados */
+        border-bottom-left-radius: 0; /* Bordes redondeados */
+        border-bottom-right-radius: 0; /* Bordes redondeados */
       }
     }
   </style>
