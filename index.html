@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Manifesto QR</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-img {
+      max-width: 100%;
+      height: auto;
+    }
+    .product-info {
+      margin-top: 20px;
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>HOLA MAPPY</h1>
+  <div class="container" ng-app="productApp" ng-controller="productController">
+    <h1>{{product.name}}</h1>
+    <img class="product-img" src="{{product.image}}" alt="{{product.name}}">
+    <div class="product-info">
+      <p><strong>Descripción:</strong> {{product.description}}</p>
+      <p><strong>Precio:</strong> {{product.price | currency}}</p>
+      <p><strong>Materiales:</strong> {{product.materials}}</p>
+      <p><strong>Elaboración:</strong> {{product.elaboration}}</p>
+    </div>
+  </div>
+
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('productApp', []);
+
+    app.controller('productController', function($scope) {
+      $scope.product = {
+        name: 'Producto Ejemplo',
+        image: 'ruta/imagen.jpg',
+        description: 'Esta es una descripción del producto.',
+        price: 50.99,
+        materials: 'Material 1, Material 2, Material 3',
+        elaboration: 'Este es el proceso de elaboración del producto.'
+      };
+    });
+  </script>
 </body>
 </html>
